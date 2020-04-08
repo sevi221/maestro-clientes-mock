@@ -1,0 +1,34 @@
+@import '../../Scss/vars';
+
+.Admin{
+    padding:  2.357em;
+    .Busca{
+        .ant-col {
+            margin: 1.286em 1.286em 1.286em 0;
+        } 
+    }
+    .ant-collapse-header{
+        background-color: $white;
+    }
+    .ant-collapse-content{
+        background-color: $lightWhite;
+    }
+    .Resultado{
+        padding: 2.357em 0 2.357em 0;
+    }
+    button{
+        margin-left: 1.14em;
+        margin-bottom: 0.57em;
+    }
+    .ant-color-green {
+        color: #009100;
+        background: #EDFFE1;
+        border-color: #009100;
+    }
+    .ant-table-pagination.ant-pagination{
+        float: left;
+    }
+    .botonera {
+        float: right;
+    }
+}

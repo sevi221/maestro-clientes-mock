@@ -1,0 +1,23 @@
+@import "../../../Scss/vars";
+
+.MHorizontal {
+  background-color: $darkBlue;
+  .ant-menu {
+    background-color: $darkBlue;
+  }
+  .ant-menu-horizontal {
+    line-height: 1.786em;
+  }
+  .ant-menu-item:hover {
+    color: $white;
+    background: $lightBlue;
+  }
+}
+
+
+.noBackgroundColor {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.65) !important; 
+}
+
+

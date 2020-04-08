@@ -1,0 +1,90 @@
+//Importar variables y fuentes
+@import "./vars";
+@import "./fonts";
+
+//Importar los estilos de las paginas desarolladas
+@import "../Pages/Admision/Admision.scss";
+@import "../Pages/Home/Home.scss";
+@import "../Pages/Admin/Admin.scss";
+@import "../Pages/Avisos/Avisos.scss";
+@import "../Pages/MockSearch/MockSearch.scss";
+
+//Importar los estilos de los componentes transversales para la app
+@import "../Components/Shared/Header/Header.scss";
+@import "../Components/Shared/MHorizontal/MHorizontal.scss";
+@import "../Components/Shared/MLateral/MLateral.scss";
+@import "../Components/Shared/BreadCrumb/BreadCrumb.scss";
+@import "../Components/Shared/MUser/MUser.scss";
+
+//Estilos de la ficha de cliente
+@import "../Pages/MockSearch/MockSearch.scss";
+@import "../Pages/FichaCliente/FichaCliente.scss";
+@import "../components/AddressClient/AddressClient.scss";
+@import "../components/BankData/BankData.scss";
+@import "../components/BasicData/BasicData.scss";
+@import "../components/Billing/Billing.scss";
+@import "../components/BillingChart/BillingChart.scss";
+@import "../components/Claims/Claims.scss";
+@import "../components/ComercialActivity/ComercialActivity.scss";
+@import "../components/Communications/Communications.scss";
+@import "../components/ContactData/ContactData.scss";
+@import "../components/ContactPeopleData/ContactPeopleData.scss";
+@import "../components/ContractsData/ContractsData.scss";
+@import "../components/Gdpr/Gdpr.scss";
+@import "../components/GeneralEnquiries/GeneralEnquiries.scss";
+@import "../components/Hierarchy/Hierarchy.scss";
+@import "../components/PresentedOffers/PresentedOffers.scss";
+@import "../components/SalesArea/SalesArea.scss";
+
+//Importar el estilo de la App
+@import "../App.scss";
+
+//Custominar ant
+.anticon {
+  color: $darkBlue;
+}
+
+//Customizar elememntos comunes
+body {
+  font-family: $secondaryFont;
+  font-size: $fontSizeDefault;
+
+  h1,
+  h2,
+  h3 {
+    color: $darkBlue;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: $fontSizeLarge;
+  }
+  h3 {
+    font-size: $fontSizeMedium;
+  }
+  h4 {
+    font-size: $fontSizeSmall;
+    color: $defaultText;
+    font-weight: bold;
+  }
+
+  // Medium devices [md] (tablets, 768px and up)
+  @media (min-width: 768px) {
+    h1 {
+      font-size: $fontSizeMedium;
+    }
+  }
+
+  // Large devices [lg] (desktops, 992px and up)
+  /*  @media (min-width: 992px) {
+    h1 {
+      font-size: $fontSizeMedium;
+    }
+  } */
+  // Large devices [xl] (desktops L, 1290px and up) - personalized
+  @media (min-width: 1290px) {
+    h1 {
+      font-size: $fontSizeLarge;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'Scss/vars';
+.App {
+  .MHorizontal {
+    background-color: $darkBlue;
+    line-height: 1.79em;
+    
+  }
+  .btnMenu {
+    margin: 0.57em  0.214em 0.214em 0.214em;
+    cursor: pointer;
+  }
+  .ant-layout-content {
+    min-height: 20em;
+    box-shadow: 0 0.14em 0.57em $blackShadow;
+    border-radius:  0.357em;
+    margin: 0.357em;
+  }
+  .ant-layout {
+    background: $white;
+  }
+}

@@ -1,0 +1,13 @@
+.hierarchy {
+  position: relative;
+  z-index: 999;
+  width: 400px !important;
+  .detallable {
+    background-color: red;
+  }
+  button {
+    i {
+      color: #ffffff;
+    }
+  }
+}

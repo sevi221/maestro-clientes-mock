@@ -1,0 +1,32 @@
+@import "../../Scss/vars";
+
+.Clients {
+  .ant-col {
+    margin: 0 1.286em 0 0;
+  }
+  .ant-row {
+    // margin-top: 1.71em;
+  }
+  .Form {
+    padding: 1.71em;
+    background-color: $lightWhite;
+    padding-bottom: 2.357em;
+    border-bottom: 0.14em solid $darkBlue;
+  }
+  .selPaq {
+    width: 19em;
+    height: 8.71em;
+  }
+  .Botonera {
+    text-align: center;
+    padding: 2.857em;
+    button {
+      margin-left: 1.286em;
+      margin-bottom: 0.71em;
+    }
+  }
+  .ant-btn-primary {
+    background: $darkBlue;
+    border-color: $darkBlue;
+  }
+}

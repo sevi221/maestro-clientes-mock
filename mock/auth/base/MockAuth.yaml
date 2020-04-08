@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Mock ISAM
+  description: API que genera un token válido para desarrollo en equipo local
+
+produces:
+  - application/json
+
+paths:
+  /mga/sps/oauth/oauth20/authorize:
+    get:
+      description: Devuelve un token válido
+      operationId: getToken
+  /pkmslogout:
+    get:
+      description: Cierra sesión
+      operationId: logout
+  /helloworld:
+    get:
+      description: prueba
+      operationId: pruebaa

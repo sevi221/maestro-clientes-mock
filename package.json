@@ -1,0 +1,91 @@
+{
+  "name": "maestro_clientes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@antv/data-set": "^0.11.1",
+    "bizcharts": "^3.5.8",
+    "fwk-correos-scripts": "1.2.1",
+    "primereact": "^4.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-vis-network": "^1.0.0",
+    "vis-network": "^7.3.6"
+  },
+  "type_version": "release",
+  "mvn-deploy-file": {
+    "snapshot": {
+      "groupId": "es.correos.fwk.prueba",
+      "url": "https://ic.correos.es/nexus/repository/ARQ-Repositorio[...]-Snapshot",
+      "repositoryId": "snapshots",
+      "classifier": "static-files"
+    },
+    "release": {
+      "groupId": "es.correos.fwk.prueba",
+      "url": "https://ic.correos.es/nexus/repository/ARQ-Repositorio[...]-Release",
+      "repositoryId": "releases",
+      "classifier": "static-files"
+    }
+  },
+  "scripts": {
+    "start_loc": "cpr .env.loc .env -o && react-scripts start",
+    "start_dev": "cpr .env.dev .env -o && react-scripts start",
+    "build_dev": "cpr .env.dev .env -o && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build && npm run zip",
+    "buil_pre": "npm run cleanDist",
+    "test": "react-scripts test",
+    "test_coverage": "npm test -- --coverage",
+    "test_coverageHtml": "serve -s coverage/lcov-report",
+    "test_coverageClean": "rimraf ./coverage",
+    "mock": "node ./mock/example/config/config.js",
+    "mock_auth": "node ./mock/auth/config/configauth.js",
+    "clean_dist": "rimraf ./build",
+    "server": "serve -s build",
+    "lint": "eslint src/**/*.js",
+    "zip": "npm-build-zip",
+    "deploy_release": "mvn-deploy-file release *.zip",
+    "deploy_snapshot": "mvn-deploy-file snapshot *.zip"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "react"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "detect"
+      }
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  }
+}

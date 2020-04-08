@@ -1,0 +1,62 @@
+@import "../../Scss/vars";
+
+th {
+  font-weight: bold !important;
+}
+
+.FichaCliente {
+  .ant-table td {
+    white-space: nowrap;
+  }
+
+  .ant-table th {
+    white-space: nowrap;
+  }
+
+  .ant-col {
+    margin: 0 1.286em 0 0;
+  }
+  .ant-row {
+    // margin-top: 1.71em;
+  }
+  .scroll {
+    overflow-x: scroll;
+  }
+  .Form {
+    padding: 1.71em;
+    background-color: $lightWhite;
+    padding-bottom: 2.357em;
+    border-bottom: 0.14em solid $darkBlue;
+
+    .infoUser {
+      h3 {
+        margin: 1.93em 0 1.93em 0;
+      }
+      p {
+        text-align: justify;
+      }
+    }
+    .selPaq {
+      width: 19em;
+      height: 8.71em;
+    }
+    .Botonera {
+      text-align: center;
+      padding: 2.857em;
+      button {
+        margin-left: 1.286em;
+        margin-bottom: 0.71em;
+      }
+    }
+    .ant-btn-primary {
+      background: $darkBlue;
+      border-color: $darkBlue;
+    }
+  }
+  .diagrama {
+    border: 1px double #000;
+  }
+  .tableContacts {
+    margin-top: 3em;
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../Scss/vars";
+
+.MUser {
+  .anticon {
+    font-size: $fontSizeIconsDefault;
+  }
+  .datos {
+    line-height: 1;
+    height: 8.57em;
+  }
+  .ant-menu-item:hover {
+    background-color: $lightCian;
+    border-right: 0.14em solid $lightBlue;
+  }
+  box-shadow: 0 0.14em 0.57em $blackShadow;
+}

@@ -1,0 +1,19 @@
+@import '../../Scss/vars';
+
+.Avisos{
+    padding: 2.358em;
+    .ant-descriptions-item-label {
+        font-weight: bold;
+    }
+    .ant-descriptions-item-no-label {
+        display: none;
+    }
+    .infoUser{
+        h3 {
+            margin: 1.93em 0 1.93em 0;
+        }
+    }
+    p{
+        text-align: justify;
+    }
+}
