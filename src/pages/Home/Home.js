@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col } from "antd";
 import imagenInicio from "../../../public/images/imagen_inicio.jpg";
 import { maestros } from "../../Api/ApiUrl";
+
 import axios from "axios";
 class Home extends Component {
   UNSAFE_componentWillMount() {
@@ -14,6 +15,7 @@ class Home extends Component {
         console.log(error);
       });
   }
+
   render() {
     return (
       <div className="Home">

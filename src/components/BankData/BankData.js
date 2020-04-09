@@ -23,7 +23,7 @@ class BankData extends Component {
             Sí
           </Descriptions.Item>
           <Descriptions.Item label="Id datos bancarios">-</Descriptions.Item>
-          <Descriptions.Item label="Clave de país del bancoo">
+          <Descriptions.Item label="Clave de país del banco">
             ES
           </Descriptions.Item>
           <Descriptions.Item label="Nº cuenta bancaria" span={10}>

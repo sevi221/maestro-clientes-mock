@@ -70,6 +70,14 @@ middleware.init(swaggerFile, (err) => {
     next();
   });
 
+  // Add custom middleware
+  app.get("/hellolaura", (req, res, next) => {
+    //console.log("hola desde el middleware");
+    res.send("Hola ficha de cliente");
+    //console.log(token);
+    next();
+  });
+
   // The mock middleware will use our custom data store,
   // which we already pre-populated with mock data
   app.use(middleware.mock());

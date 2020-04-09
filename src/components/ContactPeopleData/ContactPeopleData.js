@@ -18,6 +18,7 @@ import {
   Row,
 } from "antd";
 import moment from "moment";
+import "./ContactPeopleData.scss";
 
 const { Title } = Typography;
 const { confirm } = Modal;
@@ -38,7 +39,7 @@ for (let i = 0; i < 14568; i++) {
   data.push({
     key: i,
     id: `CT28009509`,
-    nombre: `Javier Jiménez`,
+    nombre: `Antonio Jiménez`,
     cargo: `Encargado`,
     depart: `Ventas`,
   });
@@ -105,7 +106,6 @@ class EditableTable extends React.Component {
         sorter: (a, b) => a.id - b.id,
         sortDirections: ["descend", "ascend"],
         editable: true,
-        width: 120,
         ...this.getColumnSearchProps("id"),
       },
       {
@@ -113,7 +113,6 @@ class EditableTable extends React.Component {
         dataIndex: "nombre",
         sorter: (a, b) => a.nombre.localeCompare(b.nombre),
         sortDirections: ["descend", "ascend"],
-        width: 130,
         editable: true,
         ...this.getColumnSearchProps("nombre"),
       },
@@ -122,7 +121,6 @@ class EditableTable extends React.Component {
         dataIndex: "cargo",
         sorter: (a, b) => a.cargo - b.cargo,
         sortDirections: ["descend", "ascend"],
-        width: 140,
         editable: true,
         ...this.getColumnSearchProps("cargo"),
       },
@@ -131,13 +129,11 @@ class EditableTable extends React.Component {
         dataIndex: "depart",
         sorter: (a, b) => a.depart - b.depart,
         sortDirections: ["descend", "ascend"],
-        width: 150,
         editable: true,
         ...this.getColumnSearchProps("depart"),
       },
       {
         title: "Detalle",
-        width: 120,
         render: (text, record) => {
           const { editingKey } = this.state;
           const editable = this.isEditing(record);
@@ -165,7 +161,7 @@ class EditableTable extends React.Component {
               {this.state.dataSource.length >= 1 ? (
                 <div>
                   <Button type="primary" onClick={this.showModal}>
-                    Open Modal
+                    Ver más
                   </Button>
                   <Modal
                     width="100"
@@ -177,7 +173,7 @@ class EditableTable extends React.Component {
                     <Card>
                       <Row>
                         <Col span={24}>
-                          <Title level={3}>Javier Jiménez Jiménez</Title>
+                          <Title level={3}>Antonio Jiménez Jiménez</Title>
                           <Title level={4}>ID: CT28009509</Title>
                           <Descriptions bordered size={"small"}>
                             <Descriptions.Item
@@ -238,25 +234,25 @@ class EditableTable extends React.Component {
                               MAD
                             </Descriptions.Item>
                             <Descriptions.Item label="Idioma">
-                              MAD
+                              Español
                             </Descriptions.Item>
                             <Descriptions.Item label="Teléfono">
-                              MAD
+                              915556565
                             </Descriptions.Item>
                             <Descriptions.Item label="Teléfono móvil">
-                              MAD
+                              622687895
                             </Descriptions.Item>
                             <Descriptions.Item label="Fax">
-                              MAD
+                              915556565
                             </Descriptions.Item>
                             <Descriptions.Item label="Correo Electrónico">
-                              MAD
+                              antonio@mueblespulido.es
                             </Descriptions.Item>
                             <Descriptions.Item label="Activo">
-                              MAD
+                              Si
                             </Descriptions.Item>
                             <Descriptions.Item label="Interlocutor Principal">
-                              MAD
+                              María Sánchez
                             </Descriptions.Item>
                           </Descriptions>
                         </Col>

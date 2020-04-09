@@ -43,9 +43,7 @@ class BasicProfile extends Component {
               </Descriptions>
             </Col>
           </Row>
-        </Card>
-        <br />
-        <Card>
+          <br />
           <Row>
             <Col span={24}>
               <Descriptions bordered size={"small"}>
@@ -73,9 +71,7 @@ class BasicProfile extends Component {
               </Descriptions>
             </Col>
           </Row>
-        </Card>
-        <br />
-        <Card>
+          <br />
           <Row>
             <Col span={24}>
               <Descriptions bordered size={"small"}>

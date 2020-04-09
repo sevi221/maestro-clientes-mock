@@ -1,5 +1,16 @@
 @import "../../Scss/vars";
 
+table {
+  width: 100%;
+  display: table;
+}
+
+thead,
+tbody {
+  width: 100%;
+  display: table !important;
+}
+
 th {
   font-weight: bold !important;
 }

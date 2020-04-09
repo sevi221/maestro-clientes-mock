@@ -4,11 +4,6 @@ import "./BasicData.scss";
 
 const { Title } = Typography;
 
-const user = {
-  name: "Javier Jiménez",
-  ID: "CT28009509",
-  cc_top: "Sociedad Maderera Española"
-};
 class BasicData extends Component {
   render() {
     return (

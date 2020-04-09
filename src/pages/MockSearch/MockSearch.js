@@ -1,56 +1,82 @@
 import React, { Component } from "react";
-import { Anchor, Descriptions, Row, Col, Input, Button, Modal } from "antd";
+import {
+  Anchor,
+  Descriptions,
+  Form,
+  Row,
+  Col,
+  Input,
+  Button,
+  Modal,
+} from "antd";
 import "./MockSearch.scss";
 
 const { Link } = Anchor;
-
 class MockSearch extends Component {
- constructor(props) {
-  super(props);
-   this.state = { visible: false };
+  constructor(props) {
+    super(props);
+    this.state = { visible: false };
+    this.value = {};
   }
 
   showModal = () => {
+    console.log("HOLAAAA");
     this.setState({
-      visible: true
+      visible: true,
     });
   };
 
+  handleOk = (e) => {
+    this.setState({
+      visible: false,
+    });
+  };
+
+  handleCancel = (e) => {
+    this.setState({
+      visible: false,
+    });
+  };
+  handleReset = () => {
+    console.log("Hola Reset");
+    this.props.form.resetFields();
+  };
+
+  handleRedirect = () => {
+    console.log("redirect");
+    window.location.href = "/fichacliente";
+  };
   render() {
     return (
       <div className="Clients">
-        <div className="Form">
+        <Form className="Form">
           <h2>Atención al Cliente</h2>
           <h3>Formulario de admisión de datos</h3>
-          <Row>
-            <Col lg={4}>
-              <label>Identificador Det.: </label>
-
-              <Input style={{ width: "100% " }} />
-            </Col>
-            <Col lg={8}>
-              <div className="Botonera">
-                <Button size="large" type="primary">
-                  Borrar Campos
-                </Button>
-                <Button size="large" type="primary" >
-                  Buscar
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </div>
+          <Form.Item label="Identificador Det.:">
+            <Input style={{ width: "25% " }} />
+            <div className="Botonera">
+              <Button
+                size="large"
+                type="primary"
+                onClick={this.handleReset.bind(this)}
+              >
+                Borrar Campos
+              </Button>
+              <Button size="large" type="primary" onClick={this.handleRedirect}>
+                Buscar
+              </Button>
+            </div>
+          </Form.Item>
+        </Form>
         <div className="Form">
           <h3>Búsqueda avanzada</h3>
           <Row>
             <Col lg={4}>
               <label>E-mail: </label>
-
               <Input style={{ width: "100% " }} />
             </Col>
             <Col lg={4}>
               <label>Teléfono: </label>
-
               <Input style={{ width: "100% " }} />
             </Col>
             <Col lg={4}>
@@ -63,16 +89,18 @@ class MockSearch extends Component {
             </Col>
             <Col lg={17}>
               <div className="Botonera">
-                <Button size="large" type="primary">
+                <Button size="large" type="primary" onClick={this.handleReset}>
                   Borrar Campos
                 </Button>
                 <Button size="large" type="primary" onClick={this.showModal}>
                   Buscar
                 </Button>
                 <Modal
-                  title="Coincidencia de Contactos y Comunicaciones"
+                  title="Coincidencia de Interlocutores"
                   visible={this.state.visible}
                   width={750}
+                  onOk={this.handleOk}
+                  onCancel={this.handleCancel}
                 >
                   <Descriptions bordered size="small">
                     <Descriptions.Item label="Usuario">
@@ -120,4 +148,4 @@ class MockSearch extends Component {
   }
 }
 
-export default MockSearch;
+export default Form.create()(MockSearch);

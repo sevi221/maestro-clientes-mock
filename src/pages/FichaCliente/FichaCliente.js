@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Tabs, Row, Col } from "antd";
-// import "./FichaCliente.scss";
 
 // DATOS GENERALES
 import Hierarchy from "../../components/Hierarchy/Hierarchy";
@@ -72,9 +71,9 @@ class FichaCliente extends Component {
                   </Col>
                 </Row>
               </TabPane>
-              <TabPane tab="GDPR" key="7">
+              {/* <TabPane tab="GDPR" key="7">
                 <Gdpr />
-              </TabPane>
+              </TabPane> */}
             </Tabs>
           </div>
         </div>
