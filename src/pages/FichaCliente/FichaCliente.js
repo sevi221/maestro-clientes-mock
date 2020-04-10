@@ -9,7 +9,6 @@ import AddressClient from "../../components/AddressClient/AddressClient";
 import ContactData from "../../components/ContactData/ContactData";
 import BankData from "../../components/BankData/BankData";
 import ContactPeopleData from "../../components/ContactPeopleData/ContactPeopleData";
-import Gdpr from "../../components/Gdpr/Gdpr";
 
 // DATOS TRANSACCIONALES
 import SalesArea from "../../components/SalesArea/SalesArea.js";

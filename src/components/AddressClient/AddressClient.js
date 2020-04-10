@@ -6,6 +6,7 @@ class AddressClient extends Component {
     return (
       <Descriptions
         bordered
+        size="small"
         column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
       >
         <Descriptions.Item label="Mismo que Dirección del cliente">

@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import { Row, Col, Descriptions, Divider, Typography } from "antd";
-import "./BasicData.scss";
+import "./BasicDataContact.scss";
 
 const { Title } = Typography;
 
-class BasicData extends Component {
+class BasicDataContact extends Component {
   render() {
     return (
       <React.Fragment>
         <Row>
           <Col span={24}>
-            <Title level={3}>Javier Jiménez</Title>
-            <Title level={4}>ID: CT28009509</Title>
-            <Title level={4}>
-              Cliente Principal: Sociedad Maderera Española
-            </Title>
+            <Title level={3}>José Barnuevo</Title>
+            <Title level={4}>ID: CT28009510</Title>
+            <Title level={4}>Cliente Principal: Ediciones Grupo Letras</Title>
             <Descriptions
               size="small"
               bordered
@@ -33,10 +31,10 @@ class BasicData extends Component {
                 F2906023C
               </Descriptions.Item>
               <Descriptions.Item label="Razón social" span={3}>
-                Muebles Pulido SL
+                Grupo Letras SL
               </Descriptions.Item>
               <Descriptions.Item label="Nombre comercial" span={3}>
-                Muebles Pulido SL
+                Grupo Letras SL
               </Descriptions.Item>
               <Descriptions.Item
                 label="Nombre del representante legal"
@@ -63,7 +61,7 @@ class BasicData extends Component {
                 Equipo directivo
               </Descriptions.Item>
               <Descriptions.Item label="Usuario Web" span={3}>
-                juan.jimenez
+                jose.barnuevo
               </Descriptions.Item>
               <Descriptions.Item label="Clase profesional" span={3}>
                 PYME
@@ -120,4 +118,4 @@ class BasicData extends Component {
   }
 }
 
-export default BasicData;
+export default BasicDataContact;

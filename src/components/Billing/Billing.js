@@ -4,7 +4,7 @@ import { Descriptions, Badge, Button, Modal } from "antd";
 class Billing extends Component {
   render() {
     return (
-      <Descriptions bordered>
+      <Descriptions bordered size="small">
         <Descriptions.Item label="Facturación Anual" span={3}>
           <Badge color="yellow" text="Total facturación anual: 20.000.000€" />
           <br />

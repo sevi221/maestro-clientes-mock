@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { Tabs, Row, Col } from "antd";
+import { Divider, Tabs, Row, Col } from "antd";
 
 // DATOS GENERALES
 import Hierarchy from "../../components/Hierarchy/Hierarchy";
-import BasicProfile from "../../components/BasicProfile/BasicProfile";
+import BasicDataContact from "../../components/BasicDataContact/BasicDataContact";
 import BasicData from "../../components/BasicData/BasicData";
 import AddressClient from "../../components/AddressClient/AddressClient";
 import ContactData from "../../components/ContactData/ContactData";
 import BankData from "../../components/BankData/BankData";
 import ContactPeopleData from "../../components/ContactPeopleData/ContactPeopleData";
-import Gdpr from "../../components/Gdpr/Gdpr";
 
 // DATOS TRANSACCIONALES
 import SalesArea from "../../components/SalesArea/SalesArea.js";
@@ -37,7 +36,7 @@ class FichaContactos extends Component {
                     <Hierarchy />
                   </Col>
                   <Col span={19}>
-                    <BasicProfile />
+                    <BasicDataContact />
                   </Col>
                 </Row>
               </TabPane>
@@ -47,7 +46,7 @@ class FichaContactos extends Component {
                     <Hierarchy />
                   </Col>
                   <Col span={19}>
-                    <BasicData />
+                    <BasicDataContact />
                   </Col>
                 </Row>
               </TabPane>
@@ -67,12 +66,10 @@ class FichaContactos extends Component {
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />
+                    <Divider>Comunicaciones</Divider>
                   </Col>
                 </Row>
               </TabPane>
-              {/* <TabPane tab="GDPR" key="7">
-                <Gdpr />
-              </TabPane> */}
             </Tabs>
           </div>
         </div>

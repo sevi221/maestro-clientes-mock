@@ -10,6 +10,7 @@ import {
   Modal,
 } from "antd";
 import "./MockSearch.scss";
+import ContactsList from "../../components/Constants/ContactsList";
 
 const { Link } = Anchor;
 class MockSearch extends Component {
@@ -96,48 +97,12 @@ class MockSearch extends Component {
                   Buscar
                 </Button>
                 <Modal
-                  title="Coincidencia de Interlocutores"
                   visible={this.state.visible}
                   width={750}
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
                 >
-                  <Descriptions bordered size="small">
-                    <Descriptions.Item label="Usuario">
-                      <Anchor affix={false}>
-                        <Link href="/fichacontactos" title="Javier Jiménez" />
-                      </Anchor>
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Cliente">
-                      Cliente Detallable
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Id">CT28009509</Descriptions.Item>
-                    <Descriptions.Item label="E-Mail">
-                      info@mueblespulido.es
-                    </Descriptions.Item>
-                    <Descriptions.Item label="CIF">0545789H</Descriptions.Item>
-                    <Descriptions.Item label="Teléfono">
-                      621621266
-                    </Descriptions.Item>
-                  </Descriptions>
-                  <Descriptions bordered size="small">
-                    <Descriptions.Item label="Usuario">
-                      <Anchor affix={false}>
-                        <Link title="Javier Jiménez" />
-                      </Anchor>
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Cliente">
-                      Cliente Facturable
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Id">CT28009509</Descriptions.Item>
-                    <Descriptions.Item label="E-Mail">
-                      info@mueblespulido.es
-                    </Descriptions.Item>
-                    <Descriptions.Item label="CIF">0545789H</Descriptions.Item>
-                    <Descriptions.Item label="Teléfono">
-                      621621266
-                    </Descriptions.Item>
-                  </Descriptions>
+                  <ContactsList />
                 </Modal>
               </div>
             </Col>

@@ -5,43 +5,43 @@ const comunicaciones = [
   {
     title: "Fecha de contacto",
     dataIndex: "fecha",
-    width: 150
+    width: 150,
   },
   {
     title: "Motivo de contacto",
     dataIndex: "motivo",
-    width: 150
+    width: 150,
   },
   {
     title: "Id. Asociado a Com.",
     dataIndex: "id",
-    width: 120
+    width: 120,
   },
   {
     title: "Canal de contacto",
     dataIndex: "canal",
-    width: 150
+    width: 150,
   },
   {
     title: "Estado de Com.",
     dataIndex: "estado",
-    width: 150
+    width: 150,
   },
   {
     title: "Área responsable",
     dataIndex: "area",
-    width: 150
+    width: 150,
   },
   {
     title: "Empleado responsable",
     dataIndex: "encargado",
-    width: 150
+    width: 150,
   },
   {
     title: "Persona de contacto",
     dataIndex: "cliente",
-    width: 150
-  }
+    width: 150,
+  },
 ];
 const comunicacionesData = [];
 for (let j = 0; j < 100; j++) {
@@ -54,7 +54,7 @@ for (let j = 0; j < 100; j++) {
     estado: `Abierta`,
     area: `Ventas`,
     encargado: `Juan Jiménez`,
-    cliente: `Javier Jiménez`
+    cliente: `Javier Jiménez`,
   });
 }
 class Communications extends Component {
