@@ -1,10 +1,88 @@
+// $ICON_SIZE: 2rem;
+// $DEFAULT_PADDING: 0.75rem;
+
+// .rstm-toggle-icon {
+//   display: inline-block;
+//   &-symbol {
+//     width: $ICON_SIZE;
+//     height: $ICON_SIZE;
+//     text-align: center;
+//     line-height: $ICON_SIZE;
+//   }
+// }
+
+// .rstm-tree-item-group {
+//   list-style-type: none;
+//   padding-left: 0;
+//   border-top: 1px solid #ccc;
+//   text-align: left;
+//   width: 100%;
+// }
+
+// .rstm-tree-item {
+//   padding: 0.75rem 1rem;
+//   cursor: pointer;
+//   color: #333;
+//   background: none;
+//   border-bottom: 1px solid #ccc;
+//   box-shadow: none;
+//   z-index: unset;
+//   position: relative;
+
+//   &--active {
+//     color: white;
+//     background: #179ed3;
+//     border-bottom: none;
+//   }
+
+//   &--focused {
+//     box-shadow: 0 0 5px 0 #222;
+//     z-index: 999;
+//   }
+// }
+
+// .rstm-search {
+//   padding: 1rem 1.5rem;
+//   border: none;
+//   width: 100%;
+// }
+
+#treeview {
+  height: 400px;
+}
+
+.options {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  top: 0;
+  background-color: #f5f5f5;
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.option {
+  margin-top: 10px;
+}
+
+.option > .dx-selectbox {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 350px;
+  width: 100%;
+  margin-top: 5px;
+}
+
 .hierarchy {
   position: relative;
   z-index: 999;
   width: 400px !important;
-  .detallable {
-    background-color: red;
-  }
+  height: 200px !important;
   button {
     i {
       color: #ffffff;

@@ -1,107 +1,131 @@
 import React, { Component } from "react";
 import { Row, Col, Descriptions, Divider, Typography } from "antd";
-import "./BasicDataContact.scss";
+import "./BasicData.scss";
 
+import axios from "axios";
 const { Title } = Typography;
+const urlMock =
+  "https://ficha-cliente-v4.getsandbox.com/clientes/interlocutor/9960000640/datos/generales";
+class BasicData3 extends Component {
+  state = {
+    cabecera: [],
+    cliente: [],
+    direccion: [],
+    status: null,
+    buscar: {},
+  };
 
-class BasicDataContact extends Component {
+  UNSAFE_componentWillMount() {
+    this.getDatosCliente();
+  }
+
+  getDatosCliente() {
+    axios.get(urlMock).then((res) => {
+      console.log(res.data);
+      this.setState({
+        cabecera: res.data.cabecera,
+        cliente: res.data.basico,
+        direccion: res.data.direccion,
+        status: "success",
+      });
+      console.log(this.state);
+    });
+  }
+
   render() {
-    let contacto = {
-      nombre: "José Barnuevo",
-      id: "CT28009510",
-      cctop: "Ediciones Grupo Letras",
-    };
     return (
       <React.Fragment>
         <Row>
           <Col span={24}>
-            <Title level={3}>{contacto.nombre}</Title>
-            <Title level={4}>ID: {contacto.id}</Title>
-            <Title level={4}>Cliente Principal: {contacto.cctop}</Title>
             <Descriptions
               size="small"
               bordered
               column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
             >
-              <Descriptions.Item label="Funcion de Cliente" span={3}>
-                Cliente Facturable
+              <Descriptions.Item label="Núm. Identificador" span={3}>
+                {this.state.cabecera.id}
               </Descriptions.Item>
               <Descriptions.Item label="Entidad legal" span={3}>
-                Persona Física
+                {this.state.cliente.entidadLegal}
               </Descriptions.Item>
               <Descriptions.Item label="Tipo de documento" span={3}>
-                CIF
+                {this.state.cliente.tipoDocumento}
               </Descriptions.Item>
               <Descriptions.Item label="Número de documento" span={3}>
-                F2906023C
+                {this.state.cliente.nroDocumento}
               </Descriptions.Item>
               <Descriptions.Item label="Razón social" span={3}>
-                Grupo Letras SL
+                {this.state.cliente.razonSocial}
               </Descriptions.Item>
               <Descriptions.Item label="Nombre comercial" span={3}>
-                Grupo Letras SL
+                {this.state.cliente.nombreComercial}
               </Descriptions.Item>
               <Descriptions.Item
                 label="Nombre del representante legal"
                 span={3}
               >
-                Juan Jiménez
+                {this.state.cliente.nombreRepLegal}{" "}
+                {this.state.cliente.priApeRepLegal}{" "}
+                {this.state.cliente.segApeRepLegal}
               </Descriptions.Item>
               <Descriptions.Item
                 label="Tipo de documento del rep. legal"
                 span={3}
               >
-                NIF
+                {this.state.cliente.tipDocRepLegal}
               </Descriptions.Item>
               <Descriptions.Item
                 label="Número de documento del rep. legal"
                 span={3}
               >
-                12345678H
+                {this.state.cliente.nroDocRepLegal}
               </Descriptions.Item>
               <Descriptions.Item label="Nombre del cargo" span={3}>
-                Encargado jefe
+                {this.state.cliente.nombreCargo}
+              </Descriptions.Item>
+              <Descriptions.Item label="Cargo del interlocutor" span={3}>
+                {this.state.cliente.cargoInterlocutor}
               </Descriptions.Item>
               <Descriptions.Item label="Departamento" span={3}>
-                Equipo directivo
+                {this.state.cliente.dpto}
               </Descriptions.Item>
               <Descriptions.Item label="Usuario Web" span={3}>
-                jose.barnuevo
+                {this.state.cliente.usuarioWeb}
               </Descriptions.Item>
               <Descriptions.Item label="Clase profesional" span={3}>
-                PYME
+                {this.state.cliente.claseProfesional}
               </Descriptions.Item>
               <Descriptions.Item label="Tipo de organización" span={3}>
-                SL
+                {this.state.cliente.tipoOrg}
               </Descriptions.Item>
               <Descriptions.Item
                 label="Tipo de cliente según facturación"
                 span={3}
               >
-                Cliente Tipo 1
+                {this.state.cliente.tipoClienteFact}
               </Descriptions.Item>
               <Descriptions.Item label="Código CNAE" span={3}>
-                31 Fabricación de Muebles
+                {this.state.cliente.codCnae}
               </Descriptions.Item>
               <Descriptions.Item label="Esquema SEPA" span={3}>
-                Esquema Core
+                {this.state.cliente.esqSepa}
               </Descriptions.Item>
               <Descriptions.Item label="Nº tarjeta Más Cerca" span={3}>
-                -
+                {this.state.cliente.nroTarjetaMC}
               </Descriptions.Item>
               <Descriptions.Item label="Estado del cliente" span={3}>
-                Activo
+                {this.state.cliente.estadoCliente}
               </Descriptions.Item>
               <Descriptions.Item label="Fecha de alta" span={3}>
-                10/10/2008
+                {this.state.cliente.fechaAlta}
               </Descriptions.Item>
               <Descriptions.Item label="Fecha de baja" span={3}>
-                -
+                {this.state.cliente.fechaBaja}
               </Descriptions.Item>
             </Descriptions>
           </Col>
         </Row>
-        <Divider orientation="left">Datos de Caracter Personal</Divider>
+        {/* <Divider orientation="left">Datos de Caracter Personal</Divider>
         <Descriptions
           bordered
           column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
@@ -117,10 +141,10 @@ class BasicDataContact extends Component {
           <Descriptions.item label="Aficiones">
             Pesca, Submarinismo
           </Descriptions.item>
-        </Descriptions>
+        </Descriptions> */}
       </React.Fragment>
     );
   }
 }
 
-export default BasicDataContact;
+export default BasicData3;

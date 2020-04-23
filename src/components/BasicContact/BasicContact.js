@@ -22,10 +22,10 @@ class BasicContact extends Component {
                   ES
                 </Descriptions.Item>
                 <Descriptions.Item label="Tipo de Vía" span={5}>
-                  Avenida
+                  Calle
                 </Descriptions.Item>
                 <Descriptions.Item label="Nombre de la Vía">
-                  Manoteras
+                  Alcalá
                 </Descriptions.Item>
                 <Descriptions.Item label="Número de la Vía">
                   58

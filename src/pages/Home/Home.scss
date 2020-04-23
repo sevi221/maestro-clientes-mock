@@ -1,11 +1,23 @@
-@import '../../Scss/vars';
-
-.Home{
-    padding: 3%;
-    p{
-        text-align: justify;
-    }
-    img{
-        width: 100%;
-    }
+@import "../../Scss/vars";
+.centerTitle {
+  padding-top: 15px;
+  margin-left: -40px;
+}
+.btn-buscar {
+  margin-top: 10px;
+}
+.btn-buscar-contactos {
+  margin-top: 30px;
+}
+.titleContacts {
+  padding: 20px;
+}
+.Home {
+  padding: 3%;
+  p {
+    text-align: justify;
+  }
+  img {
+    width: 100%;
+  }
 }

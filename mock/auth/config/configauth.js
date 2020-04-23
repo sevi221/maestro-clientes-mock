@@ -70,11 +70,18 @@ middleware.init(swaggerFile, (err) => {
     next();
   });
 
-  // Add custom middleware
-  app.get("/hellolaura", (req, res, next) => {
-    //console.log("hola desde el middleware");
+  // Prueba middleware para mandar cliente
+  app.get("/client", (req, res, next) => {
+    // var clientId = req.params.id;
+    //     // Comprobar que existe
+    //     if (!clientId || clientId == null) {
+    //       return res.status(404).send({
+    //         status: "error",
+    //         message: "El cliente no existe",
+    //       });
+    //     }
+
     res.send("Hola ficha de cliente");
-    //console.log(token);
     next();
   });
 

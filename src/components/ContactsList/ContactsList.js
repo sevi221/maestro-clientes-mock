@@ -18,41 +18,27 @@ import {
   Row,
 } from "antd";
 import moment from "moment";
-import "./ContactPeopleData.scss";
+import "./ContactsList.scss";
 
 const { Title } = Typography;
 const { confirm } = Modal;
 
 const EditableContext = React.createContext();
 
-// Usamos esta función para el Mock
-// const getRandom = (longitud) => {
-//   return Math.floor(
-//     Math.pow(10, longitud - 1) + Math.random() * 9 * Math.pow(10, longitud - 1)
-//   );
-// };
+const data = [];
 
 // Campos de la lista
-const data = [
-  {
-    key: 1,
+for (let i = 0; i < 5; i++) {
+  data.push({
+    key: i,
     id: `CT28009509`,
     nombre: `Antonio Jiménez`,
     cargo: `Encargado`,
     depart: `Ventas`,
-  },
-];
-// for (let i = 0; i < 1; i++) {
-//   data.push({
-//     key: i,
-//     id: `CT28009509`,
-//     nombre: `Antonio Jiménez`,
-//     cargo: `Encargado`,
-//     depart: `Ventas`,
-//   });
-// }
+  });
+}
 
-class ContactPeopleData extends React.Component {
+class ContactsList extends React.Component {
   renderCell = ({ getFieldDecorator }) => {
     const {
       editing,
@@ -305,21 +291,6 @@ class EditableTable extends React.Component {
                   </Modal>
                 </div>
               ) : null}
-              {/* <a
-                disabled={editingKey !== ""}
-                onClick={() => this.edit(record.key)}
-              >
-                Editar
-              </a>
-              <Divider type="vertical" /> */}
-              {/* {this.state.dataSource.length >= 1 ? (
-                <Popconfirm
-                  title="¿Desea continuar?"
-                  onConfirm={() => this.handleDelete(record.key)}
-                >
-                  <a href="#section">Ver más</a>
-                </Popconfirm>
-              ) : null} */}
             </span>
           );
         },
@@ -442,65 +413,15 @@ class EditableTable extends React.Component {
     });
   };
 
-  // showConfirm = () => {
-  //   confirm({
-  //     closable: true,
-  //     title: "Los siguientes registros se eliminarán permanentemente",
-  //     content: "¿Desea continuar?",
-  //     onOk() {},
-  //     onCancel() {},
-  //   });
-  // };
-
-  // Eliminar contacto
-  // handleDelete = (key) => {
-  //   const { count, dataSource } = this.state;
-  //   this.setState({
-  //     dataSource: dataSource.filter((item) => item.key !== key),
-  //     count: count - 1,
-  //   });
-  // };
-
-  // Añadir Contacto
-  //  handleAdd = () => {
-  //    const { count, dataSource } = this.state;
-  //    const newData = {
-  //      key: count,
-  //      id: `CT28009509`,
-  //      nombre: `Javier Jiménez`,
-  //      cargo: `Encargado`,
-  //      depart: `Ventas`,
-  //    };
-  //   this.setState({
-  //     dataSource: [...dataSource, newData],
-  //     count: count + 1,
-  //   });
-  // };
-
-  // Salvar contacto
-  // Save = (row) => {
-  //   const newData = [...this.state.dataSource];
-  //   const index = newData.findIndex((item) => row.key === item.key);
-  //   const item = newData[index];
-  //   newData.splice(index, 1, {
-  //     ...item,
-  //     ...row,
-  //   });
-  //   this.setState({ dataSource: newData });
-  // };
-
   render() {
     const { dataSource } = this.state;
     const components = {
       body: {
-        cell: ContactPeopleData,
+        cell: ContactsList,
       },
     };
 
     const columns = this.columns.map((col) => {
-      // if (!col.editable) {
-      //   return col;
-      // }
       return {
         ...col,
         onCell: (record) => ({
@@ -508,7 +429,6 @@ class EditableTable extends React.Component {
           inputType: "text",
           dataIndex: col.dataIndex,
           title: col.title,
-          // editing: this.isEditing(record),
         }),
       };
     });
@@ -522,19 +442,6 @@ class EditableTable extends React.Component {
         showSizeChanger: true,
         showQuickJumper: true,
       },
-      // footer: () => (
-      //   <Row>
-      //     <Col lg={15} />
-      //     <Col>
-      //       <Button type="default" onClick={this.showConfirm}>
-      //         Eliminar seleccionados
-      //       </Button>
-      //       <Button type="primary" onClick={this.handleAdd}>
-      //         Añadir nuevo registro
-      //       </Button>
-      //     </Col>
-      //   </Row>
-      // ),
       rowSelection: {},
       components: components,
       rowClassName: () => "editable-row",

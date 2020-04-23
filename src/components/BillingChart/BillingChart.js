@@ -8,82 +8,82 @@ class BillingChart extends Component {
     var data = [
       {
         month: "Enero",
-        ACME: 162,
-        Compitor: 42
+        CLIENTE: 162,
+        Compitor: 42,
       },
       {
         month: "Febrero",
-        ACME: 134,
-        Compitor: 54
+        CLIENTE: 134,
+        Compitor: 54,
       },
       {
         month: "Marzo",
-        ACME: 116,
-        Compitor: 26
+        CLIENTE: 116,
+        Compitor: 26,
       },
       {
         month: "Abril",
-        ACME: 122,
-        Compitor: 32
+        CLIENTE: 122,
+        Compitor: 32,
       },
       {
         month: "Mayo",
-        ACME: 178,
-        Compitor: 68
+        CLIENTE: 178,
+        Compitor: 68,
       },
       {
         month: "Junio",
-        ACME: 144,
-        Compitor: 54
+        CLIENTE: 144,
+        Compitor: 54,
       },
       {
         month: "Julio",
-        ACME: 125,
-        Compitor: 35
+        CLIENTE: 125,
+        Compitor: 35,
       },
       {
         month: "Agosto",
-        ACME: 176,
-        Compitor: 66
+        CLIENTE: 176,
+        Compitor: 66,
       },
       {
         month: "Septiembre",
-        ACME: 156
+        CLIENTE: 156,
       },
       {
         month: "Octubre",
-        ACME: 195
+        CLIENTE: 195,
       },
       {
         month: "Noviembre",
-        ACME: 215
+        CLIENTE: 215,
       },
       {
         month: "Diciembre",
-        ACME: 176,
-        Compitor: 36
-      }
+        CLIENTE: 176,
+        Compitor: 36,
+      },
     ];
     var dv = new DataSet.View().source(data);
     dv.transform({
       type: "fold",
-      fields: ["ACME", "Compitor"],
+      fields: ["CLIENTE", "Compitor"],
       key: "type",
-      value: "value"
+      value: "value",
     });
     const scale = {
       value: {
         alias: "Precio en Euros",
-        formatter: function(val) {
+        formatter: function (val) {
           return "€" + val;
-        }
+        },
       },
       month: {
-        range: [0, 1]
-      }
+        range: [0, 1],
+      },
     };
     return (
-      <div style={{ width: 550, height: 500 }}>
+      <div>
         <Chart data={dv} padding={"auto"} scale={scale} forceFit>
           <Tooltip crosshairs />
           <Axis />

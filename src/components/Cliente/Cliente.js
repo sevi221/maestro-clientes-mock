@@ -1,19 +1,46 @@
 import React, { Component } from "react";
 import { Descriptions, Row, Col, Card, Typography } from "antd";
+import { datos } from "../../Api/ApiUrl";
 
+import axios from "axios";
 const { Title } = Typography;
-class BasicProfile extends Component {
+const urlMock =
+  "https://virtserver.swaggerhub.com/jrojsanc/ficha-cliente/1.0/interlocutor/datos/generales/1";
+class Cliente extends Component {
+  // state = {
+  //   client = [],
+  //   status = null
+  // }
+
+  UNSAFE_componentWillMount() {
+    this.getClient();
+  }
+
+  getClient() {
+    axios.get(urlMock).then((res) => {
+      console.log(res.data);
+      console.log(res.data.cabecera);
+      // this.setState({
+      //   client: res.data.client,
+      //   status: "success"
+      // })
+    });
+  }
+
   render() {
+    let cliente = {
+      nombre: "Javier Jiménez",
+      id: "CT28009509",
+      cctop: "Sociedad Maderera Española",
+    };
     return (
       <React.Fragment>
         <Card>
           <Row>
             <Col span={24}>
-              <Title level={3}>Javier Jiménez</Title>
-              <Title level={4}>ID: CT28009509</Title>
-              <Title level={4}>
-                Cliente Principal: Sociedad Maderera Española
-              </Title>
+              <Title level={3}>{cliente.nombre}</Title>
+              <Title level={4}>ID: {cliente.id}</Title>
+              <Title level={4}>Cliente Principal: {cliente.cctop}</Title>
               <Descriptions bordered size={"small"}>
                 <Descriptions.Item label="País" span={5}>
                   España
@@ -22,10 +49,10 @@ class BasicProfile extends Component {
                   ES
                 </Descriptions.Item>
                 <Descriptions.Item label="Tipo de Vía" span={5}>
-                  Avenida
+                  Calle
                 </Descriptions.Item>
                 <Descriptions.Item label="Nombre de la Vía">
-                  Manoteras
+                  Alcalá
                 </Descriptions.Item>
                 <Descriptions.Item label="Número de la Vía">
                   58
@@ -96,4 +123,4 @@ class BasicProfile extends Component {
   }
 }
 
-export default BasicProfile;
+export default Cliente;

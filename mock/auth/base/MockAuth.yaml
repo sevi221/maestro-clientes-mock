@@ -20,7 +20,7 @@ paths:
     get:
       description: prueba
       operationId: pruebaa
-  /hellolaura:
+  /client:
     get:
-      description: pruebi
-      operationId: pruebita
+      description: client
+      operationId: pruebaa

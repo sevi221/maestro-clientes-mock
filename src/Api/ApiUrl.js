@@ -13,7 +13,7 @@ const maestros = {
 };
 
 const datos = {
-  getDatos: process.env.REACT_APP_ENDPOINT_MAESTRO + "/hellolaura",
+  getDatos: process.env.REACT_APP_ENDPOINT_MAESTRO + "/client",
 };
 
 module.exports = {

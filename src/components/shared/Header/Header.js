@@ -50,7 +50,7 @@ class Header extends Component {
                   onClick={() => {
                     this.props.modificarMigasDePan(0, {
                       path: "/",
-                      label: "Inicio"
+                      label: "Inicio",
                     });
                     this.props.clickMenu && this.props.clickMenu();
                     this.props.clickHome(true);
@@ -74,7 +74,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -4,22 +4,23 @@ import { Divider, Tabs, Row, Col } from "antd";
 // DATOS GENERALES
 import Hierarchy from "../../components/Hierarchy/Hierarchy";
 import BasicDataContact from "../../components/BasicDataContact/BasicDataContact";
-import BasicData from "../../components/BasicData/BasicData";
+import ContactsList from "../../components/ContactsList/ContactsList";
+import CommunicationList from "../../components/CommunicationList/CommunicationList";
 import AddressClient from "../../components/AddressClient/AddressClient";
 import ContactData from "../../components/ContactData/ContactData";
 import BankData from "../../components/BankData/BankData";
 import ContactPeopleData from "../../components/ContactPeopleData/ContactPeopleData";
 
 // DATOS TRANSACCIONALES
-import SalesArea from "../../components/SalesArea/SalesArea.js";
-import Claims from "../../components/Claims/Claims";
-import Billing from "../../components/Billing/Billing";
-import BillingChart from "../../components/BillingChart/BillingChart";
-import Communications from "../../components/Communications/Communications";
-import ContractsData from "../../components/ContractsData/ContractsData";
-import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
-import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
-import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
+// import SalesArea from "../../components/SalesArea/SalesArea.js";
+// import Claims from "../../components/Claims/Claims";
+// import Billing from "../../components/Billing/Billing";
+// import BillingChart from "../../components/BillingChart/BillingChart";
+// import Communications from "../../components/Communications/Communications";
+// import ContractsData from "../../components/ContractsData/ContractsData";
+// import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
+// import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
+// import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
 const { TabPane } = Tabs;
 
 class FichaContactos extends Component {
@@ -40,15 +41,12 @@ class FichaContactos extends Component {
                   </Col>
                 </Row>
               </TabPane>
-              <TabPane tab="Datos Básicos de cliente" key="2">
-                <Row>
-                  <Col span={3}>
-                    <Hierarchy />
-                  </Col>
-                  <Col span={19}>
-                    <BasicDataContact />
-                  </Col>
-                </Row>
+              <TabPane tab="Contactos y comunicaciones" key="2">
+                <ContactsList />
+                <Divider>Comunicaciones</Divider>
+                <CommunicationList />
+                <Divider>Información</Divider>
+                <h3>Información del contacto</h3>
               </TabPane>
               <TabPane tab="Dirección del cliente" key="3">
                 <AddressClient />
@@ -73,7 +71,7 @@ class FichaContactos extends Component {
             </Tabs>
           </div>
         </div>
-        <div className="Admision">
+        {/* <div className="Admision">
           <div className="Form">
             <h3>Datos transaccionales</h3>
             <Tabs type="card">
@@ -104,7 +102,7 @@ class FichaContactos extends Component {
               </TabPane>
             </Tabs>
           </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }

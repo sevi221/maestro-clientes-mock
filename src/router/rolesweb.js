@@ -7,24 +7,28 @@ const rolesWeb = [
         sub: [
           { path: "/subMenuuno", sub: null },
           { path: "/subMenudos", sub: null },
-          { path: "/subMenutres", sub: null }
-        ]
+          { path: "/subMenutres", sub: null },
+        ],
       },
       {
         path: "/admin",
-        sub: [{ path: "/subMenucuatro", sub: null }]
+        sub: [{ path: "/subMenucuatro", sub: null }],
       },
       { path: "/avisos", sub: null },
       { path: "/MockSearch", sub: null },
       { path: "/fichacliente", sub: null },
-      { path: "/fichacontactos", sub: null }
+      { path: "/fichacontactos", sub: null },
+      { path: "/fichacliente1", sub: null },
+      { path: "/fichacliente2", sub: null },
+      { path: "/fichacliente3", sub: null },
+      { path: "/fichacliente4", sub: null },
     ],
-    label: "Administrador"
+    label: "Administrador",
   },
   {
     rol: "DGT_PRE_US_OFICENTDIRE",
     accion: [{ path: "/admision", sub: null }],
-    label: "Centro directivo"
-  }
+    label: "Centro directivo",
+  },
 ];
 export default rolesWeb;

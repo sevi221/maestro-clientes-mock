@@ -5,11 +5,17 @@
   "dependencies": {
     "@antv/data-set": "^0.11.1",
     "bizcharts": "^3.5.8",
+    "devextreme": "19.2.7",
+    "devextreme-cli": "^1.1.13",
+    "devextreme-react": "19.2.7",
+    "express": "^4.17.1",
     "fwk-correos-scripts": "1.2.1",
     "primereact": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-simple-tree-menu": "^1.1.15",
     "react-vis-network": "^1.0.0",
+    "swagger-express-middleware": "^4.0.0",
     "vis-network": "^7.3.6"
   },
   "type_version": "release",

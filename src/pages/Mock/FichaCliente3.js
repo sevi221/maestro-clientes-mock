@@ -3,8 +3,8 @@ import { Tabs, Row, Col } from "antd";
 
 // DATOS GENERALES
 import Hierarchy from "../../components/Hierarchy/Hierarchy";
-import CamposCore from "../../components/CamposCore/CamposCore";
-import BasicData from "../../components/BasicData/BasicData";
+import CamposCore3 from "../../components/CamposCore/CamposCore3";
+import BasicData3 from "../../components/BasicData/BasicData3";
 import AddressClient from "../../components/AddressClient/AddressClient";
 import ContactData from "../../components/ContactData/ContactData";
 import BankData from "../../components/BankData/BankData";
@@ -23,7 +23,7 @@ import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries
 const { TabPane } = Tabs;
 // const { Title } = Typography;
 
-class FichaCliente extends Component {
+class FichaCliente3 extends Component {
   render() {
     return (
       <React.Fragment>
@@ -37,9 +37,9 @@ class FichaCliente extends Component {
                     <Hierarchy />
                   </Col>
                   <Col span={19}>
-                    <CamposCore />
+                    <CamposCore3 />
                     <br />
-                    <BasicData />
+                    <BasicData3 />
                   </Col>
                 </Row>
               </TabPane>
@@ -102,4 +102,4 @@ class FichaCliente extends Component {
   }
 }
 
-export default FichaCliente;
+export default FichaCliente3;
