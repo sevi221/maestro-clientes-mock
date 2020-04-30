@@ -45,6 +45,9 @@ class BasicData3 extends Component {
               <Descriptions.Item label="Núm. Identificador" span={3}>
                 {this.state.cabecera.id}
               </Descriptions.Item>
+              <Descriptions.Item label="Sistema origen de datos" span={3}>
+                CRM
+              </Descriptions.Item>
               <Descriptions.Item label="Entidad legal" span={3}>
                 {this.state.cliente.entidadLegal}
               </Descriptions.Item>

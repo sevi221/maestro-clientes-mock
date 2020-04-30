@@ -175,6 +175,9 @@ class EditableTable extends React.Component {
                             >
                               Sí
                             </Descriptions.Item>
+                            <Descriptions.Item label="Origen datos" span={5}>
+                              CRM
+                            </Descriptions.Item>
                             <Descriptions.Item
                               label="Nombre del cargo"
                               span={5}
@@ -239,7 +242,7 @@ class EditableTable extends React.Component {
                               915556565
                             </Descriptions.Item>
                             <Descriptions.Item label="Correo Electrónico">
-                              antonio@mueblespulido.es
+                              uno-e@bbva.es
                             </Descriptions.Item>
                             <Descriptions.Item label="Activo">
                               Si
@@ -251,7 +254,7 @@ class EditableTable extends React.Component {
                         </Col>
                       </Row>
                     </Card>
-                    <Card>
+                    {/* <Card>
                       <Divider orientation="left">GDPR</Divider>
                       <Row>
                         <Col span={6}>
@@ -287,7 +290,7 @@ class EditableTable extends React.Component {
                           />
                         </Col>
                       </Row>
-                    </Card>
+                    </Card> */}
                   </Modal>
                 </div>
               ) : null}

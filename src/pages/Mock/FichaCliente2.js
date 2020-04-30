@@ -9,7 +9,7 @@ import AddressClient from "../../components/AddressClient/AddressClient";
 import ContactData from "../../components/ContactData/ContactData";
 import BankData from "../../components/BankData/BankData";
 import ContactPeopleData from "../../components/ContactPeopleData/ContactPeopleData";
-
+import PruebasJerarquia from "../PruebasJerarquia/PruebasJerarquia";
 // DATOS TRANSACCIONALES
 import SalesArea from "../../components/SalesArea/SalesArea.js";
 import Claims from "../../components/Claims/Claims";
@@ -34,7 +34,7 @@ class FichaCliente2 extends Component {
               <TabPane tab="Datos Básicos de cliente" key="1">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <CamposCore2 />
@@ -55,7 +55,7 @@ class FichaCliente2 extends Component {
               <TabPane tab="Personas de contacto" key="5">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />

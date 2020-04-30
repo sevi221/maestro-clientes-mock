@@ -19,7 +19,7 @@ import {
 } from "antd";
 import moment from "moment";
 import "./ContactPeopleData.scss";
-
+import Communications from "../Communications/Communications";
 const { Title } = Typography;
 const { confirm } = Modal;
 
@@ -41,8 +41,15 @@ const data = [
     cargo: `Encargado`,
     depart: `Ventas`,
   },
+  {
+    key: 2,
+    id: `CT28009510`,
+    nombre: `Pedro Jiménez`,
+    cargo: `Encargado`,
+    depart: `Ventas`,
+  },
 ];
-// for (let i = 0; i < 1; i++) {
+// for (let i = 0; i < 3; i++) {
 //   data.push({
 //     key: i,
 //     id: `CT28009509`,
@@ -167,10 +174,11 @@ class EditableTable extends React.Component {
             <span>
               {this.state.dataSource.length >= 1 ? (
                 <div>
-                  <Button type="primary" onClick={this.showModal}>
+                  <a href="/contactosdatos">Ver más</a>
+                  {/* <Button type="primary" onClick={this.showModal}>
                     Ver más
-                  </Button>
-                  <Modal
+                  </Button> */}
+                  {/* <Modal
                     width="100"
                     title="Datos de contacto"
                     visible={this.state.visible}
@@ -188,6 +196,9 @@ class EditableTable extends React.Component {
                               span={12}
                             >
                               Sí
+                            </Descriptions.Item>
+                            <Descriptions.Item label="Origen datos" span={5}>
+                              CRM
                             </Descriptions.Item>
                             <Descriptions.Item
                               label="Nombre del cargo"
@@ -265,6 +276,9 @@ class EditableTable extends React.Component {
                         </Col>
                       </Row>
                     </Card>
+                    <Card title="Comunicaciones">
+                      <Communications />
+                    </Card>
                     <Card>
                       <Divider orientation="left">GDPR</Divider>
                       <Row>
@@ -302,7 +316,7 @@ class EditableTable extends React.Component {
                         </Col>
                       </Row>
                     </Card>
-                  </Modal>
+                  </Modal> */}
                 </div>
               ) : null}
               {/* <a

@@ -1,17 +1,30 @@
 @import "../../Scss/vars";
 
+button {
+  i {
+    color: #ffffff !important;
+  }
+}
+
 table {
   width: 100%;
   display: table;
 }
 
-thead,
+thead {
+  width: 100%;
+  display: table !important;
+}
+
 tbody {
   width: 100%;
   display: table !important;
 }
 
 th {
+  font-weight: bold !important;
+}
+.ant-collapse-header {
   font-weight: bold !important;
 }
 
@@ -28,7 +41,7 @@ th {
     margin: 0 1.286em 0 0;
   }
   .ant-row {
-    // margin-top: 1.71em;
+    margin-top: 1.71em;
   }
   .scroll {
     overflow-x: scroll;

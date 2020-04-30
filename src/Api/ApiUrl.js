@@ -10,6 +10,8 @@ const auth = {
 // MICROSERVICIOS COMPONENTES
 const maestros = {
   getcp: process.env.REACT_APP_ENDPOINT_MAESTRO + "/helloworld",
+  // AQUÍ PONER EL MICRO DE BUSCAR ID
+  getDatos: process.env.REACT_APP_ENDPOINT_MAESTRO + "/client",
 };
 
 const datos = {

@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@antv/data-set": "^0.11.1",
+    "@progress/kendo-react-animation": "^3.13.0",
+    "@progress/kendo-react-treeview": "^3.13.0",
     "bizcharts": "^3.5.8",
     "devextreme": "19.2.7",
     "devextreme-cli": "^1.1.13",

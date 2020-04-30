@@ -3,12 +3,12 @@ import { Table } from "antd";
 
 const comunicaciones = [
   {
-    title: "Fecha de contacto",
+    title: "Fecha de comunicación",
     dataIndex: "fecha",
     width: 150,
   },
   {
-    title: "Motivo de contacto",
+    title: "Motivo de comunicación",
     dataIndex: "motivo",
     width: 150,
   },

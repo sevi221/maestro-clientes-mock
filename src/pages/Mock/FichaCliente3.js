@@ -20,6 +20,7 @@ import ContractsData from "../../components/ContractsData/ContractsData";
 import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
 import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
 import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
+import PruebasJerarquia from "../PruebasJerarquia/PruebasJerarquia";
 const { TabPane } = Tabs;
 // const { Title } = Typography;
 
@@ -34,7 +35,7 @@ class FichaCliente3 extends Component {
               <TabPane tab="Datos Básicos de cliente" key="1">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <CamposCore3 />
@@ -55,7 +56,7 @@ class FichaCliente3 extends Component {
               <TabPane tab="Personas de contacto" key="5">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />

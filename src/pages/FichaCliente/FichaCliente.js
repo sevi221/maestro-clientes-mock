@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Tabs, Row, Col } from "antd";
-
+import "./FichaCliente.scss";
 // DATOS GENERALES
 import Hierarchy from "../../components/Hierarchy/Hierarchy";
 import CamposCore from "../../components/CamposCore/CamposCore";
@@ -20,6 +20,7 @@ import ContractsData from "../../components/ContractsData/ContractsData";
 import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
 import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
 import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
+import PruebasJerarquia from "../PruebasJerarquia/PruebasJerarquia";
 const { TabPane } = Tabs;
 // const { Title } = Typography;
 
@@ -27,14 +28,14 @@ class FichaCliente extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Admision">
+        <div className="FichaCliente">
           <div className="Form">
             <h3>Ficha de Cliente</h3>
             <Tabs type="card">
               <TabPane tab="Datos Básicos de cliente" key="1">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <CamposCore />
@@ -55,7 +56,8 @@ class FichaCliente extends Component {
               <TabPane tab="Personas de contacto" key="5">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    {/* <Hierarchy /> */}
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />

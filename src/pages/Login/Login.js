@@ -14,7 +14,7 @@ class Login extends Component {
       let pares = search.slice(1).split("#");
       let params = {};
 
-      pares.map(par => {
+      pares.map((par) => {
         // eslint-disable-line array-callback-return
         let [id, tokenISAM] = par.split("&")[0].split("="); // id_token : token
         let [estado, cod] = par.split("&")[1].split("=");
@@ -101,22 +101,22 @@ class Login extends Component {
     // decodificamos el token jwt
     const info = decode(infoEncoded);
 
-    //seatar las necesarias de forma manual - se guardan en la variable de sesión store
+    //setear las necesarias de forma manual - se guardan en la variable de sesión store
     store.data.auth.userInfo.nombre = info.nombre;
     store.data.auth.userInfo.apellidos = info.apellidos;
     store.data.auth.userInfo.codired = info.codired;
     store.data.auth.userInfo.identificador = info.UC;
 
     //matchear el rol con lo devuelto en json - metodo "includes" no soportado para IE
-    const accionesWeb = rolesWeb.filter(function(items) {
+    const accionesWeb = rolesWeb.filter(function (items) {
       return info.roles.includes(items.rol);
     });
 
     store.data.auth.userInfo.accionesWeb = [
-      ...new Set(accionesWeb.map(ac => ac.accion)[0])
+      ...new Set(accionesWeb.map((ac) => ac.accion)[0]),
     ];
     store.data.auth.userInfo.rol = [
-      ...new Set(accionesWeb.map(ac => ac.label))
+      ...new Set(accionesWeb.map((ac) => ac.label)),
     ];
 
     //guardar los datos en el Store

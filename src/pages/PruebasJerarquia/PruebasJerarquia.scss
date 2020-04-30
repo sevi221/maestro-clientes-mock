@@ -1,0 +1,21 @@
+button {
+  i {
+    color: #ffffff !important;
+  }
+}
+
+.jerarquia {
+  position: relative;
+  z-index: 999;
+  min-width: 550px !important;
+  height: 200px !important;
+  margin: 10px;
+  text-overflow: ellipsis;
+  button {
+    margin-right: 3px;
+  }
+}
+
+.jerarquia-buscar {
+  margin: 10px;
+}

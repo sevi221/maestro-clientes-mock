@@ -15,11 +15,12 @@ import SalesArea from "../../components/SalesArea/SalesArea.js";
 import Claims from "../../components/Claims/Claims";
 import Billing from "../../components/Billing/Billing";
 import BillingChart from "../../components/BillingChart/BillingChart";
-import Communications from "../../components/Communications/Communications";
+// import Communications from "../../components/Communications/Communications";
 import ContractsData from "../../components/ContractsData/ContractsData";
 import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
 import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
 import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
+import PruebasJerarquia from "../PruebasJerarquia/PruebasJerarquia";
 const { TabPane } = Tabs;
 // const { Title } = Typography;
 
@@ -33,8 +34,10 @@ class FichaCliente1 extends Component {
             <Tabs type="card">
               <TabPane tab="Datos Básicos de cliente" key="1">
                 <Row>
-                  <Col span={3}>
-                    <Hierarchy />
+                  <Col span={4}>
+                    <div className="jerarquia-base">
+                      <PruebasJerarquia />
+                    </div>
                   </Col>
                   <Col span={19}>
                     <CamposCore1 />
@@ -55,7 +58,7 @@ class FichaCliente1 extends Component {
               <TabPane tab="Personas de contacto" key="5">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />
@@ -76,9 +79,9 @@ class FichaCliente1 extends Component {
               <TabPane tab="Reclamaciones" key="2">
                 <Claims />
               </TabPane>
-              <TabPane tab="Comunicaciones a Cliente" key="3">
+              {/* <TabPane tab="Comunicaciones a Cliente" key="3">
                 <Communications />
-              </TabPane>
+              </TabPane> */}
               <TabPane tab="Histórico de contrato" key="4">
                 <ContractsData />
               </TabPane>

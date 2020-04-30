@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 import { Form, Row, Col, Input, Button, Modal } from "antd";
+import { store } from "../../store/store";
+import CoincidenceContacts from "../../components/CoincidenceContacts/CoincidenceContacts";
 import ContactsList from "../../components/Constants/ContactsList";
 // import imagenInicio from "../../../public/images/imagen_inicio.jpg";
 // import { maestros } from "../../Api/ApiUrl";
-
 import axios from "axios";
+
 const urlMock = "https://ficha-cliente.getsandbox.com/clientes/interlocutor/";
 
 class Home extends Component {
@@ -12,43 +15,50 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { visible: false, user: {}, search: "" };
+    store.load();
+
+    this.state = { visible: false, search: "", redirect: false };
     this.value = {};
+    this.getIdClient = this.getIdClient.bind(this);
   }
-  redirect = () => {
-    window.location.href = "/fichacliente1";
-  };
+  // redirect = () => {
+  //   window.location.href = "/fichacliente1";
+  // };
 
   getIdClient = () => {
     this.setState({
       search: this.idRef.current.state.value,
     });
-    console.log(this.idRef.current.state.value);
-    console.log(this.state.search);
-    // this.getIdFromSearch();
+
+    store.data.clienteId = this.state.search;
+    store.save();
+
+    let id = this.state.search;
+    let url = urlMock + id + "/datos/generales";
+    console.log(this.state);
+
+    axios.get(url).then((res) => {
+      this.setState({
+        search: res.data.search,
+        status: "success",
+      });
+    });
+    this.setState({ redirect: true });
+    window.location.href = "/fichacliente1";
+    // return <Redirect to="/fichacliente1" />;
   };
 
-  // getIdFromSearch = () => {
-  //   let id = this.state.search;
-  //   let url = urlMock + id + "/datos/generales";
-  //   axios.get(url).then((res) => {
-  //     this.setState({
-  //       buscar: res.data.buscar,
-  //       status: "success",
-  //     });
-  //     console.log(this.state.buscar);
-  //   });
-  // };
+  // ESTO PARA EL MICROSERVICIO
+  // try{
+  //   let url = maestros.getDatos + "/id"
+  //   window.location.href = url;
+  // }catch(error){
+  //   console.log("ERROR EN ID")
+  // }
 
   showModal = () => {
     this.setState({
       visible: true,
-    });
-  };
-
-  handleOk = (e) => {
-    this.setState({
-      visible: false,
     });
   };
 
@@ -67,18 +77,42 @@ class Home extends Component {
           <Row type="flex" justify="center" align="middle">
             <h3 className="centerTitle">Búsqueda de Cliente</h3>
           </Row>
+          <br />
           <Row type="flex" justify="center" align="middle">
-            <Col type="flex" justify="center" align="middle">
-              <Form.Item label="Código del interlocutor">
-                <Input ref={this.idRef} allowClear />
-              </Form.Item>
+            {/* // Validación de formato CTXXXXXXXX (números, letras??)
+                // validateStatus="error"
+                // help="Introduzca un id correcto" */}
+            <Col lg={4}>
+              <label>Id. del interlocutor </label>
+              <Input ref={this.idRef} allowClear />
+            </Col>
+            <Col lg={4}>
+              <label>E-mail: </label>
+              <Input style={{ width: "100% " }} allowClear />
+            </Col>
+            <Col lg={4}>
+              <label>Teléfono: </label>
+              <Input style={{ width: "100% " }} allowClear />
+            </Col>
+            <Col lg={4}>
+              <label>Razón social: </label>
+              <Input style={{ width: "100% " }} allowClear />
+            </Col>
+            <Col lg={4}>
+              <label>CIF: </label>
+              <Input style={{ width: "100% " }} allowClear />
             </Col>
           </Row>
+          <br />
           <div className="btn-buscar">
             <Form.Item>
-              <Row type="flex" justify="center" align="middle">
+              <Row>
                 <Col type="flex" justify="center" align="middle">
-                  <Button size="large" type="primary" onClick={this.redirect}>
+                  <Button
+                    size="large"
+                    type="primary"
+                    onClick={this.getIdClient}
+                  >
                     Buscar
                   </Button>
                 </Col>
@@ -118,12 +152,13 @@ class Home extends Component {
                     Buscar
                   </Button>
                   <Modal
+                    title="Coincidencia de Interlocutores"
                     visible={this.state.visible}
                     width={750}
-                    onOk={this.handleOk}
+                    footer={null}
                     onCancel={this.handleCancel}
                   >
-                    <ContactsList />
+                    <CoincidenceContacts />
                   </Modal>
                 </div>
               </Col>

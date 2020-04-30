@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Tabs, Row, Col } from "antd";
 
 // DATOS GENERALES
-import Hierarchy from "../../components/Hierarchy/Hierarchy";
 import CamposCore4 from "../../components/CamposCore/CamposCore4";
 import BasicData4 from "../../components/BasicData/BasicData4";
 import AddressClient from "../../components/AddressClient/AddressClient";
@@ -20,6 +19,7 @@ import ContractsData from "../../components/ContractsData/ContractsData";
 import ComercialActivity from "../../components/ComercialActivity/ComercialActivity";
 import PresentedOffers from "../../components/PresentedOffers/PresentedOffers";
 import GeneralEnquiries from "../../components/GeneralEnquiries/GeneralEnquiries";
+import PruebasJerarquia from "../PruebasJerarquia/PruebasJerarquia";
 const { TabPane } = Tabs;
 // const { Title } = Typography;
 
@@ -34,7 +34,7 @@ class FichaCliente4 extends Component {
               <TabPane tab="Datos Básicos de cliente" key="1">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <CamposCore4 />
@@ -55,7 +55,7 @@ class FichaCliente4 extends Component {
               <TabPane tab="Personas de contacto" key="5">
                 <Row>
                   <Col span={3}>
-                    <Hierarchy />
+                    <PruebasJerarquia />
                   </Col>
                   <Col span={19}>
                     <ContactPeopleData />

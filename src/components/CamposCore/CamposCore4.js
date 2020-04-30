@@ -44,10 +44,10 @@ class CamposCore4 extends Component {
         <Card>
           <Row>
             <Col span={24}>
-              <Title level={2}>¡{this.state.basico.nombreComercial} </Title>
-              <Title level={4}>¡{this.state.resumen.personaTipo} </Title>
+              <Title level={2}>{this.state.basico.nombreComercial} </Title>
+              <Title level={4}>{this.state.resumen.personaTipo} </Title>
               <Title level={4}>
-                ¡{this.state.resumen.tipoDocumento}{" "}
+                {this.state.resumen.tipoDocumento}{" "}
                 {this.state.resumen.nroDocumento}
               </Title>
               <Title level={4}>Sector CNAE: {this.state.basico.codCnae}</Title>

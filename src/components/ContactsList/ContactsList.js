@@ -19,6 +19,7 @@ import {
 } from "antd";
 import moment from "moment";
 import "./ContactsList.scss";
+import CommunicationList from "../CommunicationList/CommunicationList";
 
 const { Title } = Typography;
 const { confirm } = Modal;
@@ -170,10 +171,13 @@ class EditableTable extends React.Component {
                           <Title level={4}>ID: CT28009509</Title>
                           <Descriptions bordered size={"small"}>
                             <Descriptions.Item
-                              label="Mismo que Datos de contacto del cliente"
+                              label="Mismo que datos de contacto del cliente"
                               span={12}
                             >
                               Sí
+                            </Descriptions.Item>
+                            <Descriptions.Item label="Origen datos" span={5}>
+                              CRM
                             </Descriptions.Item>
                             <Descriptions.Item
                               label="Nombre del cargo"
@@ -239,7 +243,7 @@ class EditableTable extends React.Component {
                               915556565
                             </Descriptions.Item>
                             <Descriptions.Item label="Correo Electrónico">
-                              antonio@mueblespulido.es
+                              uno-e@bbva.es
                             </Descriptions.Item>
                             <Descriptions.Item label="Activo">
                               Si
@@ -251,6 +255,13 @@ class EditableTable extends React.Component {
                         </Col>
                       </Row>
                     </Card>
+                    <Card>
+                      <Divider orientation="left">
+                        Comunicaciones al cliente
+                      </Divider>
+                      <CommunicationList />
+                    </Card>
+                    <br />
                     <Card>
                       <Divider orientation="left">GDPR</Divider>
                       <Row>
